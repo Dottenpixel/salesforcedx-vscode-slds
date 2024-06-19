@@ -65,7 +65,9 @@ commands:
       - run:
           name: 'Compile'
           shell: bash.exe
-          command: npm run compile
+          command: |
+            npm install typescript
+            npm run compile
       - save_cache:
           key: dependency-cache-win3-{{ checksum "package.json" }}
           paths:
